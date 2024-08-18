@@ -1,0 +1,224 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #1f242d;
+    color: #fff;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none; 
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a{
+    display:inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .3s ease forwards;
+    animation-delay: calc(.2s * var(--i)) ;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: #FF8200;
+}
+
+.home{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.home-content{
+    max-width: 600px;
+}
+
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .3s;
+}
+.home-content h3:nth-of-type(2){
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .3s;
+}
+
+.home-content h3 span{
+    color: #FF8200;
+}
+
+.home-content h1{
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 0.8s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p{
+    font-size: 16px;
+    opacity: 0;
+    animation: slideLeft 0.8s ease forwards;
+    animation-delay: 1s;
+}
+
+
+.home-img img{
+    width: 450px;
+    margin-right: -20px;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation-delay: calc(.2s * var(--i)),3s;
+    border-radius: 50px;
+}
+
+.social-media a{
+    display: inline-flex;
+    justify-content: center;
+    width: 40px;
+    align-items: center;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #FF8200;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #FF8200;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    opacity: 0;
+    animation: slideLeft 0.8s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.social-media a:hover{
+    background: #FF8200;
+    color: #1f242d;
+    transition: 0.3s;
+}
+.btn{
+    display: inline-block;
+    padding: 12px 28px;
+    background: #FF8200;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f242d;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border: solid #FF8200 3px;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+.btn:hover{
+    border: solid 3px #FF8200;
+    background-color: #1f242d;
+    color: #FF8200;
+    transition: 0.3s;
+    font-weight: 800;
+}
+
+
+/*KeyFrames*/
+@keyframes slideRight{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideBottom{
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes zoomIn{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes floatImage{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-24px);
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
